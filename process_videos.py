@@ -21,7 +21,9 @@ import os
 from pathlib import Path
 
 # Configuration
-SOURCE_VIDEO = r"C:\Users\MarieLexisDad\pai\projects\Dr. Martin Video.mp4"
+# Set SOURCE_VIDEO as environment variable or pass as command line argument
+# Example: export SOURCE_VIDEO="/path/to/Dr. Martin Video.mp4"
+SOURCE_VIDEO = os.environ.get('SOURCE_VIDEO', 'Dr. Martin Video.mp4')
 OUTPUT_DIR = Path(__file__).parent / "output"
 COVER_SLIDES_DIR = Path(__file__).parent
 
@@ -136,24 +138,39 @@ def main():
 
     # Check if source video exists
     if not os.path.exists(SOURCE_VIDEO):
-        print(f"[ERROR] Source video not found at {SOURCE_VIDEO}")
-        return
+        print(f"[ERROR] Source video not found at: {SOURCE_VIDEO}")
+        print(f"\nPlease set SOURCE_VIDEO environment variable or ensure video file exists:")
+        print(f"  export SOURCE_VIDEO='/path/to/Dr. Martin Video.mp4'")
+        print(f"  python process_videos.py")
+        return 1
 
     print(f"\n[SOURCE] Video: {SOURCE_VIDEO}")
     print(f"[OUTPUT] Directory: {OUTPUT_DIR}")
 
     # Process each clip
+    success_count = 0
+    error_count = 0
     for clip_config in CLIPS:
         try:
             process_clip(clip_config)
+            success_count += 1
         except Exception as e:
             print(f"[ERROR] Error processing {clip_config['name']}: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            error_count += 1
             continue
 
     print("\n" + "=" * 60)
-    print("[SUCCESS] Processing complete!")
+    if error_count == 0:
+        print(f"[SUCCESS] Processing complete! ({success_count} clips processed)")
+    else:
+        print(f"[PARTIAL SUCCESS] {success_count} clips processed, {error_count} failed")
     print(f"[OUTPUT] Videos saved in: {OUTPUT_DIR}")
     print("=" * 60)
 
+    return 0 if error_count == 0 else 1
+
 if __name__ == "__main__":
-    main()
+    import sys
+    sys.exit(main())

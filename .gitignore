@@ -1,24 +1,62 @@
-# Video files (large) - exclude all except the ones we need
-output/*.mp4
-*.mp4
-
-# But include these specific videos
-!output/clip1_computational_modeling.mp4
-!output/clip2_student_ambassadors.mp4
-!output/clip3_teacher_army.mp4
-
-# Python cache
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Temp files
-temp-audio.m4a
-*.tmp
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
 
-# OS files
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
-Thumbs.db
 
-# Keep output directory structure but not large files
-!.gitkeep
+# Temporary files
+*.log
+*.tmp
+temp-audio.m4a
+*.bak
+
+# Source video (large file - do not commit)
+Dr. Martin Video.mp4
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json

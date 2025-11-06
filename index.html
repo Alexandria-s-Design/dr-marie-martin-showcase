@@ -3,16 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
     <title>Dr. Marie Martin - Transforming Education Through Computational Modeling</title>
+    <meta name="title" content="Dr. Marie Martin - Transforming Education Through Computational Modeling">
+    <meta name="description" content="Explore Dr. Marie Martin's insights on computational modeling, educational transformation, and the future of science education. Vice President of Education at Cell Collective, pioneering ModelIt platform.">
+    <meta name="keywords" content="Dr. Marie Martin, computational modeling, science education, Cell Collective, ModelIt, K-12 education, systems biology, educational technology">
+    <meta name="author" content="Dr. Marie Martin, Discovery Collective">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexandria-s-design.github.io/dr-marie-martin-showcase/">
+    <meta property="og:title" content="Dr. Marie Martin - Transforming Education Through Computational Modeling">
+    <meta property="og:description" content="Explore Dr. Marie Martin's insights on computational modeling, educational transformation, and the future of science education.">
+    <meta property="og:image" content="https://alexandria-s-design.github.io/dr-marie-martin-showcase/output/clip1_computational_modeling_cover.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexandria-s-design.github.io/dr-marie-martin-showcase/">
+    <meta property="twitter:title" content="Dr. Marie Martin - Transforming Education Through Computational Modeling">
+    <meta property="twitter:description" content="Explore Dr. Marie Martin's insights on computational modeling, educational transformation, and the future of science education.">
+    <meta property="twitter:image" content="https://alexandria-s-design.github.io/dr-marie-martin-showcase/output/clip1_computational_modeling_cover.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexandria-s-design.github.io/dr-marie-martin-showcase/">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. Marie Martin",
+      "jobTitle": "Vice President of Education",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Cell Collective"
+      },
+      "description": "Pioneering educator and thought leader in computational modeling and systems biology education",
+      "email": "info@discoverycollective.com",
+      "knowsAbout": ["Computational Modeling", "Educational Technology", "Systems Biology", "K-12 Education", "Science Education"],
+      "alumniOf": "University of Nebraska"
+    }
+    </script>
 </head>
 <body>
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-background"></div>
+    <header class="hero" role="banner">
+        <div class="hero-background" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -24,28 +69,32 @@
                 <p class="hero-subtitle">
                     Transforming Education Through Computational Modeling & Science
                 </p>
-                <div class="brand-badges">
-                    <span class="badge">Cell Collective</span>
-                    <span class="badge">ModelIt</span>
-                    <span class="badge">Discovery Collective</span>
+                <div class="brand-badges" role="list">
+                    <span class="badge" role="listitem">Cell Collective</span>
+                    <span class="badge" role="listitem">ModelIt</span>
+                    <span class="badge" role="listitem">Discovery Collective</span>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Videos Section -->
-    <section class="videos-section">
+    <section class="videos-section" aria-labelledby="videos-heading">
         <div class="container">
-            <h2 class="section-title">Featured Insights</h2>
+            <h2 id="videos-heading" class="section-title">Featured Insights</h2>
             <p class="section-subtitle">Explore Dr. Martin's perspectives on computational modeling, educational transformation, and the future of learning</p>
 
-            <div class="videos-grid">
+            <div class="videos-grid" role="list">
                 <!-- Video 1 -->
-                <div class="video-card">
+                <article class="video-card" role="listitem">
                     <div class="video-wrapper">
-                        <video controls preload="metadata" poster="output/clip1_computational_modeling_cover.png">
+                        <video
+                            controls
+                            preload="metadata"
+                            poster="output/clip1_computational_modeling_cover.png"
+                            aria-label="Video: Computational Modeling Platform">
                             <source src="output/clip1_computational_modeling.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+                            <p>Your browser does not support the video tag. Please use a modern browser to view this content.</p>
                         </video>
                     </div>
                     <div class="video-info">
@@ -61,11 +110,15 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div class="video-card">
+                <article class="video-card" role="listitem">
                     <div class="video-wrapper">
-                        <video controls preload="metadata" poster="output/clip2_pedagogy_cover.png">
+                        <video
+                            controls
+                            preload="metadata"
+                            poster="output/clip2_pedagogy_cover.png"
+                            aria-label="Video: Student Ambassadors & K-12 Implementation">
                             <source src="output/clip2_student_ambassadors.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+                            <p>Your browser does not support the video tag. Please use a modern browser to view this content.</p>
                         </video>
                     </div>
                     <div class="video-info">
@@ -81,11 +134,15 @@
                 </div>
 
                 <!-- Video 3 -->
-                <div class="video-card">
+                <article class="video-card" role="listitem">
                     <div class="video-wrapper">
-                        <video controls preload="metadata" poster="output/clip3_ai_revolution_cover.png">
+                        <video
+                            controls
+                            preload="metadata"
+                            poster="output/clip3_ai_revolution_cover.png"
+                            aria-label="Video: Platform Demonstration & Teacher Army">
                             <source src="output/clip3_teacher_army.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+                            <p>Your browser does not support the video tag. Please use a modern browser to view this content.</p>
                         </video>
                     </div>
                     <div class="video-info">
@@ -104,10 +161,10 @@
     </section>
 
     <!-- Bio Section -->
-    <section class="bio-section">
+    <section class="bio-section" aria-labelledby="bio-heading">
         <div class="container">
-            <div class="bio-card">
-                <h2 class="section-title">About Dr. Marie Martin</h2>
+            <article class="bio-card">
+                <h2 id="bio-heading" class="section-title">About Dr. Marie Martin</h2>
                 <div class="bio-content">
                     <p>
                         Dr. Marie Martin is a pioneering educator and thought leader in computational modeling and systems biology education. As a key collaborator with Cell Collective and ModelIt, she has been instrumental in bringing cutting-edge computational modeling tools into K-12 and higher education classrooms worldwide.
@@ -124,24 +181,24 @@
                 </div>
                 <div class="contact-info">
                     <h3>Contact</h3>
-                    <a href="mailto:info@discoverycollective.com" class="email-link">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <a href="mailto:info@discoverycollective.com" class="email-link" aria-label="Email Dr. Marie Martin at info@discoverycollective.com">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                             <path d="M3 4L10 11L17 4M3 4H17V16H3V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         info@discoverycollective.com
                     </a>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
                             <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
                             <circle cx="20" cy="20" r="10" fill="currentColor" opacity="0.2"/>
                             <circle cx="20" cy="12" r="3" fill="currentColor"/>
@@ -155,13 +212,13 @@
                         Transforming education through computational modeling and innovative science education.
                     </p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer navigation">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="https://cellcollective.org" target="_blank">Cell Collective</a></li>
+                        <li><a href="https://cellcollective.org" target="_blank" rel="noopener noreferrer">Cell Collective</a></li>
                         <li><a href="mailto:info@discoverycollective.com">Discovery Collective</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Dr. Marie Martin. All rights reserved.</p>

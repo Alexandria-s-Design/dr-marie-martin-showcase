@@ -1,0 +1,13 @@
+# Dr. Marie Martin Video Showcase - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Video processing
+moviepy>=1.0.3
+pillow>=10.0.0
+
+# Development dependencies (optional)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
