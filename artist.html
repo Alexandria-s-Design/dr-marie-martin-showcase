@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Martin | Jazz Vocalist & Educator</title>
+    <meta name="description" content="Dr. Marie Martin - Jazz vocalist, educator, and author. Experience the soul of New Orleans through original music and jazz education.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Marie Martin | Jazz Vocalist & Educator">
+    <meta property="og:description" content="Experience the soul of New Orleans through original music and jazz education.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- =====================================================
+         HERO SECTION
+         ===================================================== -->
+    <section class="hero texture-overlay" id="home">
+        <!-- Saxophone silhouette -->
+        <svg class="hero-sax" viewBox="0 0 100 300" fill="currentColor" opacity="0.1">
+            <path d="M45 10 Q50 5 55 10 L60 30 Q65 35 65 45 L70 80 Q75 90 75 100 L80 150 Q85 160 85 180 L90 220 Q95 240 95 260 L90 280 Q85 290 75 295 L60 298 Q50 300 40 298 L25 295 Q15 290 10 280 L5 260 Q0 240 5 220 L10 180 Q15 160 20 150 L25 100 Q25 90 30 80 L35 45 Q35 35 40 30 Z M35 120 Q30 125 35 130 Q40 125 35 120 M50 200 Q55 210 60 200 Q55 195 50 200"/>
+        </svg>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">New Orleans Soul</p>
+            <h1 class="hero-title">Marie Martin</h1>
+            <p class="hero-tagline">
+                Jazz Vocalist <span>•</span> Educator <span>•</span> Storyteller
+            </p>
+
+            <div class="ornament">
+                <svg class="ornament-icon" viewBox="0 0 24 24">
+                    <path d="M12 3L14.5 8.5L20.5 9.3L16.2 13.4L17.3 19.3L12 16.5L6.7 19.3L7.8 13.4L3.5 9.3L9.5 8.5L12 3Z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         ABOUT SECTION
+         ===================================================== -->
+    <section class="about texture-overlay" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-frame">
+                        <span class="about-image-initials">MM</span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h2 class="text-burgundy">The Voice Behind the Music</h2>
+
+                    <p>
+                        <strong>Dr. Marie Martin, EdD</strong> is an Educational Leadership Consultant
+                        with 25+ years transforming schools, districts, and government education programs
+                        across K-12, higher education, and military sectors.
+                    </p>
+
+                    <p>
+                        A former district administrator and government education specialist, she
+                        co-founded Alexandria's Design to help educational organizations embrace
+                        future-ready practices. Her expertise spans strategic planning, curriculum
+                        development, equity-focused transformation, and AI integration in education.
+                    </p>
+
+                    <p>
+                        As a jazz vocalist, Marie brings the same passion for transformation to her
+                        music—blending heritage, storytelling, and the improvisational spirit of
+                        New Orleans jazz into performances that educate and inspire.
+                    </p>
+
+                    <blockquote class="about-quote">
+                        "I've seen every education trend come and go. This isn't a trend—this is
+                        the future. Let me show you how to lead it."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         MUSIC SECTION
+         ===================================================== -->
+    <section class="music" id="music">
+        <div class="container">
+            <h2>Listen</h2>
+            <p class="music-subtitle">Original compositions blending jazz heritage with modern soul</p>
+
+            <div class="tracks-container">
+                <!-- Track 1: Wear the Crown -->
+                <div class="track-card" data-track="wear-the-crown">
+                    <div class="vinyl-container">
+                        <div class="vinyl">
+                            <div class="vinyl-label"></div>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">Wear the Crown</h3>
+                        <p class="track-description">
+                            An anthem of self-empowerment and resilience. This soulful piece
+                            celebrates the strength found in embracing one's authentic self.
+                        </p>
+                        <div class="audio-controls">
+                            <button class="play-btn" aria-label="Play Wear the Crown">
+                                <svg class="play-icon" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                </svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="time-display">
+                                    <span class="current-time">0:00</span>
+                                    <span class="duration">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata">
+                        <source src="music/wear-the-crown.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <!-- Track 2: The Right Path Is Now -->
+                <div class="track-card" data-track="the-right-path">
+                    <div class="vinyl-container">
+                        <div class="vinyl">
+                            <div class="vinyl-label"></div>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">The Right Path Is Now</h3>
+                        <p class="track-description">
+                            A journey through purpose and discovery. Inspired by the winding roads
+                            of New Orleans and the paths we choose to walk.
+                        </p>
+                        <div class="audio-controls">
+                            <button class="play-btn" aria-label="Play The Right Path Is Now">
+                                <svg class="play-icon" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                </svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="time-display">
+                                    <span class="current-time">0:00</span>
+                                    <span class="duration">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata">
+                        <source src="music/the-right-path.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <!-- Track 3: Moves Like Legacy -->
+                <div class="track-card" data-track="moves-like-legacy">
+                    <div class="vinyl-container">
+                        <div class="vinyl">
+                            <div class="vinyl-label"></div>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">Moves Like Legacy</h3>
+                        <p class="track-description">
+                            A love letter woven with call-and-response traditions. This piece
+                            honors the ones who shape us and the legacies we carry forward.
+                        </p>
+                        <div class="audio-controls">
+                            <button class="play-btn" aria-label="Play Moves Like Legacy">
+                                <svg class="play-icon" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                </svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="time-display">
+                                    <span class="current-time">0:00</span>
+                                    <span class="duration">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata">
+                        <source src="music/moves-like-legacy.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         CURRICULUM SECTION
+         ===================================================== -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="curriculum-header">
+                <span class="curriculum-badge">For Educators</span>
+                <h2>Jazz History Curriculum</h2>
+                <p class="curriculum-intro">
+                    An 8-week journey through the evolution of jazz, designed for middle school
+                    students. From African roots to contemporary voices, students explore the
+                    rich cultural heritage that shaped America's original art form.
+                </p>
+            </div>
+
+            <div class="lessons-grid">
+                <!-- Week 1 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 1</span>
+                    <h3 class="lesson-title">Roots & Spirituals</h3>
+                    <p class="lesson-era">Pre-1900 • African Heritage</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">African Origins</span>
+                        <span class="artist-tag">Spirituals</span>
+                        <span class="artist-tag">Work Songs</span>
+                    </div>
+                </article>
+
+                <!-- Week 2 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 2</span>
+                    <h3 class="lesson-title">Birth of Jazz</h3>
+                    <p class="lesson-era">1900–1920 • New Orleans</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Louis Armstrong</span>
+                        <span class="artist-tag">Jelly Roll Morton</span>
+                    </div>
+                </article>
+
+                <!-- Week 3 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 3</span>
+                    <h3 class="lesson-title">Swing Era</h3>
+                    <p class="lesson-era">1930s–40s • Big Band</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Duke Ellington</span>
+                        <span class="artist-tag">Count Basie</span>
+                    </div>
+                </article>
+
+                <!-- Week 4 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 4</span>
+                    <h3 class="lesson-title">Bebop Revolution</h3>
+                    <p class="lesson-era">1940s–50s • Complexity</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Charlie Parker</span>
+                        <span class="artist-tag">Dizzy Gillespie</span>
+                    </div>
+                </article>
+
+                <!-- Week 5 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 5</span>
+                    <h3 class="lesson-title">Cool Jazz</h3>
+                    <p class="lesson-era">1950s–60s • West Coast</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Miles Davis</span>
+                        <span class="artist-tag">Chet Baker</span>
+                    </div>
+                </article>
+
+                <!-- Week 6 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 6</span>
+                    <h3 class="lesson-title">Free Jazz & Fusion</h3>
+                    <p class="lesson-era">1960s–70s • Experimentation</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">John Coltrane</span>
+                        <span class="artist-tag">Herbie Hancock</span>
+                    </div>
+                </article>
+
+                <!-- Week 7 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 7</span>
+                    <h3 class="lesson-title">Contemporary Jazz</h3>
+                    <p class="lesson-era">1980s–Today • Living Tradition</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Wynton Marsalis</span>
+                        <span class="artist-tag">Marie Martin</span>
+                    </div>
+                </article>
+
+                <!-- Week 8 -->
+                <article class="lesson-card">
+                    <span class="lesson-week">Week 8</span>
+                    <h3 class="lesson-title">Capstone Project</h3>
+                    <p class="lesson-era">Student Presentations</p>
+                    <div class="lesson-artists">
+                        <span class="artist-tag">Create</span>
+                        <span class="artist-tag">Present</span>
+                        <span class="artist-tag">Celebrate</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         CONTACT SECTION
+         ===================================================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="contact-text">
+                Whether you're looking to book a performance, bring jazz education to your
+                school, or explore educational consulting, I'd love to hear from you.
+            </p>
+
+            <div class="contact-buttons">
+                <a href="mailto:charlesmartinedd@gmail.com?subject=Performance%20Inquiry" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                    Book a Performance
+                </a>
+                <a href="mailto:charlesmartinedd@gmail.com?subject=Educational%20Workshop" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                    </svg>
+                    Educational Workshops
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="footer">
+        <!-- Wrought Iron Divider SVG -->
+        <svg class="footer-divider" viewBox="0 0 400 30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3">
+            <path d="M0 15 Q50 5 100 15 T200 15 T300 15 T400 15" />
+            <circle cx="100" cy="15" r="4" fill="currentColor"/>
+            <circle cx="200" cy="15" r="6" fill="currentColor"/>
+            <circle cx="300" cy="15" r="4" fill="currentColor"/>
+            <path d="M180 8 Q200 0 220 8" />
+            <path d="M180 22 Q200 30 220 22" />
+        </svg>
+
+        <p class="footer-brand">Marie Martin</p>
+        <p class="footer-tagline">Jazz Vocalist • Educator • New Orleans Soul</p>
+
+        <nav class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#music">Music</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <p class="footer-copyright">
+            © 2024 Marie Martin. Crafted with love in the spirit of New Orleans.
+        </p>
+    </footer>
+
+    <!-- Audio Player Script -->
+    <script src="js/audio-player.js"></script>
+</body>
+</html>
