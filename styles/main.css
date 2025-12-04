@@ -304,7 +304,7 @@ p {
 
 .about-image-frame {
   width: 100%;
-  max-width: 400px;
+  max-width: 240px;
   aspect-ratio: 3/4;
   margin: 0 auto;
   background: linear-gradient(135deg, var(--smoke-gray), var(--midnight-blue));
@@ -1273,7 +1273,7 @@ p {
   }
 
   .about-image-frame {
-    max-width: 280px;
+    max-width: 180px;
   }
 
   .track-card {
