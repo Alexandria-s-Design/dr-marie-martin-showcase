@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Marie Martin - YouTube Thumbnail Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .instructions {
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid #6366f1;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .instructions h2 {
+            color: #6366f1;
+            margin-bottom: 16px;
+        }
+
+        .instructions ul {
+            margin-left: 24px;
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: rgba(139, 92, 246, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #a78bfa;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .thumbnail-wrapper {
+            background: #16213e;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .thumbnail-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #a78bfa;
+        }
+
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transform: scale(0.5);
+            transform-origin: top left;
+            margin-bottom: -360px;
+        }
+
+        /* Template 1: EdD Journey */
+        .template-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .template-1 .headshot {
+            width: 450px;
+            height: 600px;
+            background: #fff;
+            border-radius: 24px;
+            margin-right: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #667eea;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .template-1 .content {
+            flex: 1;
+        }
+
+        .template-1 .main-text {
+            font-size: 120px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.95;
+            margin-bottom: 30px;
+            text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .template-1 .subtitle {
+            font-size: 56px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* Template 2: 5 Essential Skills */
+        .template-2 {
+            background: linear-gradient(90deg, #6366f1 50%, #fff 50%);
+            display: flex;
+        }
+
+        .template-2 .left-panel {
+            width: 50%;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .template-2 .number {
+            font-size: 200px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .template-2 .skills-text {
+            font-size: 100px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.95;
+        }
+
+        .template-2 .right-panel {
+            width: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .template-2 .headshot-placeholder {
+            width: 500px;
+            height: 600px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .template-2 .banner {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fbbf24;
+            padding: 20px 60px;
+            border-radius: 12px;
+            font-size: 44px;
+            font-weight: 800;
+            color: #1a1a2e;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Template 3: Women in Leadership */
+        .template-3 {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            position: relative;
+        }
+
+        .template-3 .main-title {
+            font-size: 120px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            line-height: 0.95;
+            margin-bottom: 40px;
+            text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .template-3 .subtitle-banner {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 24px 80px;
+            border-radius: 16px;
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1a1a2e;
+        }
+
+        .template-3 .headshot-circle {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            width: 280px;
+            height: 280px;
+            background: #fff;
+            border-radius: 50%;
+            border: 12px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ec4899;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Template 4: ModelIt Story */
+        .template-4 {
+            background: #0f0f1e;
+            display: flex;
+            padding: 60px;
+            position: relative;
+        }
+
+        .template-4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            opacity: 0.3;
+        }
+
+        .template-4 .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .template-4 .headshot-large {
+            width: 400px;
+            height: 550px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 24px;
+            margin-right: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.5);
+        }
+
+        .template-4 .text-content {
+            flex: 1;
+        }
+
+        .template-4 .brand-logo {
+            font-size: 80px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .template-4 .story-text {
+            font-size: 64px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .template-4 .stats {
+            background: rgba(99, 102, 241, 0.2);
+            border: 3px solid #6366f1;
+            padding: 24px 40px;
+            border-radius: 12px;
+            font-size: 52px;
+            font-weight: 800;
+            color: #fbbf24;
+            display: inline-block;
+        }
+
+        /* Template 5: Simple Professional */
+        .template-5 {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            padding: 80px;
+        }
+
+        .template-5 .headshot-professional {
+            width: 480px;
+            height: 600px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 24px;
+            margin-right: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .template-5 .text-stack {
+            flex: 1;
+        }
+
+        .template-5 .category {
+            font-size: 48px;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+        }
+
+        .template-5 .main-headline {
+            font-size: 96px;
+            font-weight: 900;
+            color: #1a1a2e;
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .template-5 .name-badge {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 40px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .download-info {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .download-info h3 {
+            color: #8b5cf6;
+            margin-bottom: 12px;
+        }
+
+        .download-info p {
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dr. Marie Martin - YouTube Thumbnail Templates</h1>
+
+        <div class="instructions">
+            <h2>How to Use These Templates</h2>
+            <ul>
+                <li><strong>Screenshot:</strong> Use browser dev tools to set window to exactly 1280x720 pixels</li>
+                <li><strong>Replace Placeholders:</strong> Add Dr. Martin's professional headshot in designated areas</li>
+                <li><strong>Customize Text:</strong> Edit HTML to match specific video titles</li>
+                <li><strong>Colors:</strong> Cell Collective brand palette: <code>#6366f1</code> (indigo), <code>#8b5cf6</code> (purple), <code>#ec4899</code> (pink), <code>#fbbf24</code> (yellow)</li>
+                <li><strong>Export:</strong> Save as JPG (high quality, under 2MB)</li>
+                <li><strong>Tools:</strong> Use Canva, Photoshop, or Figma for professional photo compositing</li>
+            </ul>
+        </div>
+
+        <div class="thumbnail-grid">
+
+            <!-- Template 1: EdD Journey -->
+            <div class="thumbnail-wrapper">
+                <div class="thumbnail-title">Template 1: EdD Journey</div>
+                <div class="thumbnail template-1">
+                    <div class="headshot">
+                        Dr. Marie Martin<br>Professional Headshot<br>(450 x 600px)
+                    </div>
+                    <div class="content">
+                        <div class="main-text">MY EdD<br>JOURNEY</div>
+                        <div class="subtitle">What I Wish I'd Known</div>
+                    </div>
+                </div>
+                <div class="download-info">
+                    <h3>Use For:</h3>
+                    <p>Videos 1, 10, 11 (EdD Journey, Career Transition, Personal Branding)</p>
+                </div>
+            </div>
+
+            <!-- Template 2: 5 Essential Skills -->
+            <div class="thumbnail-wrapper">
+                <div class="thumbnail-title">Template 2: Numbered List</div>
+                <div class="thumbnail template-2">
+                    <div class="left-panel">
+                        <div class="number">5</div>
+                        <div class="skills-text">ESSENTIAL<br>SKILLS</div>
+                    </div>
+                    <div class="right-panel">
+                        <div class="headshot-placeholder">
+                            Dr. Marie Martin<br>Professional Headshot<br>(500 x 600px)
+                        </div>
+                        <div class="banner">Every Leader Must Master</div>
+                    </div>
+                </div>
+                <div class="download-info">
+                    <h3>Use For:</h3>
+                    <p>Video 2 (5 Essential Skills) - Customize number and text for any numbered list video</p>
+                </div>
+            </div>
+
+            <!-- Template 3: Women in Leadership -->
+            <div class="thumbnail-wrapper">
+                <div class="thumbnail-title">Template 3: Women in Leadership</div>
+                <div class="thumbnail template-3">
+                    <div class="main-title">WOMEN IN<br>LEADERSHIP</div>
+                    <div class="subtitle-banner">Breaking Barriers</div>
+                    <div class="headshot-circle">
+                        Dr. Marie<br>Martin<br>Headshot
+                    </div>
+                </div>
+                <div class="download-info">
+                    <h3>Use For:</h3>
+                    <p>Videos 3, 12 (Women in Leadership series) - Bold, empowering design</p>
+                </div>
+            </div>
+
+            <!-- Template 4: ModelIt Story -->
+            <div class="thumbnail-wrapper">
+                <div class="thumbnail-title">Template 4: ModelIt Story</div>
+                <div class="thumbnail template-4">
+                    <div class="content-wrapper">
+                        <div class="headshot-large">
+                            Dr. Marie Martin<br>Professional Headshot<br>(400 x 550px)
+                        </div>
+                        <div class="text-content">
+                            <div class="brand-logo">MODELIT STORY</div>
+                            <div class="story-text">From 2 Teachers<br>to 1,200 Students</div>
+                            <div class="stats">23% Performance Increase</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-info">
+                    <h3>Use For:</h3>
+                    <p>Videos 5, 8, 9 (Innovation, ModelIt, Computational Thinking)</p>
+                </div>
+            </div>
+
+            <!-- Template 5: Simple Professional -->
+            <div class="thumbnail-wrapper">
+                <div class="thumbnail-title">Template 5: Simple Professional</div>
+                <div class="thumbnail template-5">
+                    <div class="headshot-professional">
+                        Dr. Marie Martin<br>Professional Headshot<br>(480 x 600px)
+                    </div>
+                    <div class="text-stack">
+                        <div class="category">EDUCATIONAL LEADERSHIP</div>
+                        <div class="main-headline">DATA-DRIVEN<br>DECISIONS</div>
+                        <div class="name-badge">Dr. Marie Martin</div>
+                    </div>
+                </div>
+                <div class="download-info">
+                    <h3>Use For:</h3>
+                    <p>Videos 4, 6, 7 (Administration, Data-Driven Leadership, AI in Education)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="instructions">
+            <h2>Thumbnail Design Best Practices</h2>
+            <ul>
+                <li><strong>Face Size:</strong> Dr. Martin's face should occupy at least 1/3 of thumbnail for recognition</li>
+                <li><strong>Text Readability:</strong> All text must be readable at 320x180px (mobile size)</li>
+                <li><strong>High Contrast:</strong> Ensure text stands out against background</li>
+                <li><strong>Consistent Branding:</strong> Use Cell Collective colors across all thumbnails</li>
+                <li><strong>Professional Photography:</strong> Use well-lit, high-resolution headshots</li>
+                <li><strong>Expression:</strong> Confident, warm, approachable (avoid overly serious or overly casual)</li>
+                <li><strong>Background Removal:</strong> Clean cutout of Dr. Martin for compositing</li>
+                <li><strong>A/B Testing:</strong> Create 2-3 variations and test which performs best</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h2>Quick Customization Guide</h2>
+            <ul>
+                <li><strong>Video 1:</strong> Template 1 - "MY EdD JOURNEY" / "What I Wish I'd Known"</li>
+                <li><strong>Video 2:</strong> Template 2 - "5 ESSENTIAL SKILLS" / "Every Leader Must Master"</li>
+                <li><strong>Video 3:</strong> Template 3 - "WOMEN IN LEADERSHIP" / "Breaking Barriers"</li>
+                <li><strong>Video 4:</strong> Template 5 - "SCHOOL ADMINISTRATION" / "Beyond the Principal Role"</li>
+                <li><strong>Video 5:</strong> Template 4 - "MODELIT STORY" / "2 Teachers → 1,200 Students"</li>
+                <li><strong>Video 6:</strong> Template 5 - "DATA-DRIVEN DECISIONS" / "Making an Impact"</li>
+                <li><strong>Video 7:</strong> Template 5 - "AI IN EDUCATION" / "Opportunity or Threat?"</li>
+                <li><strong>Video 8:</strong> Template 4 - "FUTURE OF SCHOOL" / "Reimagining 2030"</li>
+                <li><strong>Video 9:</strong> Template 4 - "COMPUTATIONAL THINKING" / "Not Just CS Class"</li>
+                <li><strong>Video 10:</strong> Template 1 - "TEACHER TO ADMIN" / "Making the Transition"</li>
+                <li><strong>Video 11:</strong> Template 1 - "YOUR LEADERSHIP BRAND" / "Stand Out as a Leader"</li>
+                <li><strong>Video 12:</strong> Template 3 - "TRANSFORMING EDUCATION" / "A Call to Action"</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

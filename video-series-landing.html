@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Marie Martin - Educational Leadership Video Series</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            color: #fff;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #6366f1;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            overflow: hidden;
+        }
+
+        .video-thumbnail iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-thumbnail-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .video-content {
+            padding: 24px;
+        }
+
+        .video-number {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .video-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .video-description {
+            font-size: 0.9375rem;
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .video-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .video-duration {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .video-status {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f3f4f6;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .status-coming-soon {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-live {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .timeline {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: -32px;
+            width: 2px;
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-week {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+
+        .timeline-topics {
+            font-size: 0.9375rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .resources-section {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .resource-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .resource-description {
+            font-size: 0.9375rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #fff;
+            color: #6366f1;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-section {
+            background: #fff;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bio-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 40px;
+            box-shadow: 0 12px 48px rgba(99, 102, 241, 0.3);
+        }
+
+        .bio-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bio-content p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .bio-credentials {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .credential-badge {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 32px;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .footer-description {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #a78bfa;
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Educational Leadership<br>Video Series</h1>
+            <p class="hero-subtitle">Dr. Marie Martin, Ed.L.</p>
+            <p class="hero-description">
+                Insights, strategies, and inspiration for transforming education through innovative leadership,
+                computational modeling, and equity-focused practices.
+            </p>
+            <div class="cta-buttons">
+                <a href="#subscribe" class="btn btn-primary">Subscribe on YouTube</a>
+                <a href="#content-calendar" class="btn btn-secondary">View Full Calendar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Videos</h2>
+                <p class="section-description">
+                    Explore the complete 12-video series covering EdD journey, leadership skills,
+                    innovation, and the future of education.
+                </p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 1<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 1 • Week 1</div>
+                        <h3 class="video-title">My EdD Journey: From Educator to Educational Leader</h3>
+                        <p class="video-description">
+                            The complete story of pursuing a doctorate while working full-time and raising a family—
+                            challenges, triumphs, and lessons learned.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 8-10 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 2<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 2 • Week 3</div>
+                        <h3 class="video-title">5 Essential Skills Every Educational Leader Needs</h3>
+                        <p class="video-description">
+                            Strategic visioning, data-driven decisions, stakeholder engagement, change management,
+                            and equity-focused leadership.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 6-8 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 3<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 3 • Week 5</div>
+                        <h3 class="video-title">Women in Educational Leadership: Breaking Barriers</h3>
+                        <p class="video-description">
+                            Personal experiences, mentorship strategies, and creating pathways for the next
+                            generation of women leaders in education.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 10-12 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 4<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 4 • Week 7</div>
+                        <h3 class="video-title">Modern School Administration: Beyond the Traditional Principal Role</h3>
+                        <p class="video-description">
+                            Evolving from manager to instructional leader—building distributed teams and
+                            creating time for what matters most.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 8-10 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 5<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 5 • Week 9</div>
+                        <h3 class="video-title">Implementing Innovative Pedagogy: The ModelIt Story</h3>
+                        <p class="video-description">
+                            How we brought computational modeling to 1,200+ students—from 2 teachers to school-wide
+                            implementation. Real strategies, real results.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 12-15 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 6<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 6 • Week 11</div>
+                        <h3 class="video-title">Data-Driven Leadership: Making Decisions That Matter</h3>
+                        <p class="video-description">
+                            Moving beyond test scores to create balanced assessment systems and build a culture
+                            of continuous improvement.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 7-9 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 7<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 7 • Week 13</div>
+                        <h3 class="video-title">AI in Education: Opportunity or Threat?</h3>
+                        <p class="video-description">
+                            Current state of AI in K-12, practical applications, ethical considerations, and
+                            preparing teachers for the AI age.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 10-12 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 8<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 8 • Week 15</div>
+                        <h3 class="video-title">The Future of School: Reimagining Education for 2030</h3>
+                        <p class="video-description">
+                            Trends shaping education's future, skills students will need, and preparing for
+                            uncertainty and change.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 12-15 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 9 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 9<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 9 • Week 17</div>
+                        <h3 class="video-title">Computational Thinking for Everyone: Not Just CS Class</h3>
+                        <p class="video-description">
+                            Cross-curricular applications of computational thinking, real-world problem-solving,
+                            and professional development for teachers.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 8-10 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 10 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 10<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 10 • Week 19</div>
+                        <h3 class="video-title">From Teacher to Administrator: Making the Transition</h3>
+                        <p class="video-description">
+                            Is administration right for you? Credentials, pathways, and the emotional journey
+                            of leaving the classroom.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 9-11 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 11 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 11<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 11 • Week 21</div>
+                        <h3 class="video-title">Building Your Educational Leadership Brand</h3>
+                        <p class="video-description">
+                            Why personal branding matters, leveraging social media, publishing opportunities,
+                            and networking strategies.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 7-9 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 12 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-thumbnail-placeholder">
+                            Video 12<br>Coming Soon
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <div class="video-number">Video 12 • Week 23</div>
+                        <h3 class="video-title">My Vision for Transforming Education: A Call to Action</h3>
+                        <p class="video-description">
+                            Reflecting on the journey, the power of computational modeling, creating equitable
+                            opportunities, and how to get involved.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-duration">⏱ 10-15 min</span>
+                            <span class="video-status status-coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Timeline Section -->
+    <section class="section" id="content-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">6-Month Publishing Schedule</h2>
+                <p class="section-description">
+                    New videos every other Tuesday at 9:00 AM EST. Subscribe to never miss an episode.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">Q1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Weeks 1-5</div>
+                        <div class="timeline-title">EdD Journey & Educational Leadership Foundations</div>
+                        <div class="timeline-topics">
+                            Videos 1-3: EdD Journey, Essential Leadership Skills, Women in Leadership
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Q2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Weeks 7-11</div>
+                        <div class="timeline-title">School Administration & Innovation</div>
+                        <div class="timeline-topics">
+                            Videos 4-6: Modern Administration, Implementing Innovation (ModelIt), Data-Driven Leadership
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Q3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Weeks 13-17</div>
+                        <div class="timeline-title">Future of Education & AI Integration</div>
+                        <div class="timeline-topics">
+                            Videos 7-9: AI in Education, Future of School, Computational Thinking
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Q4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Weeks 19-23</div>
+                        <div class="timeline-title">Leadership Development & Career Growth</div>
+                        <div class="timeline-topics">
+                            Videos 10-12: Teacher to Administrator, Leadership Brand, Vision for Transformation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="-webkit-text-fill-color: white;">Exclusive Resources</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                    Download free guides, toolkits, and templates to support your educational leadership journey.
+                </p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3 class="resource-title">EdD Journey Planning Guide</h3>
+                    <p class="resource-description">
+                        Program comparison checklist, time management templates, and milestone tracker.
+                    </p>
+                    <a href="#" class="resource-link">Download Free</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3 class="resource-title">Leadership Skills Self-Assessment</h3>
+                    <p class="resource-description">
+                        Evaluate your strengths in strategic visioning, data-driven decisions, and equity leadership.
+                    </p>
+                    <a href="#" class="resource-link">Download Free</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🚀</div>
+                    <h3 class="resource-title">ModelIt Implementation Guide</h3>
+                    <p class="resource-description">
+                        Everything you need to bring computational modeling to your school or district.
+                    </p>
+                    <a href="#" class="resource-link">Download Free</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3 class="resource-title">Data Dashboard Template</h3>
+                    <p class="resource-description">
+                        Track student outcomes, equity metrics, and school improvement goals.
+                    </p>
+                    <a href="#" class="resource-link">Download Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="section bio-section">
+        <div class="container">
+            <div class="bio-grid">
+                <div class="bio-image">
+                    Dr. Marie Martin<br>Professional Portrait<br>(500 x 500px)
+                </div>
+                <div class="bio-content">
+                    <h2>About Dr. Marie Martin</h2>
+                    <p>
+                        Dr. Marie Martin, Ed.L. is Vice President at Discovery Collective and ModelIt, leading
+                        innovative approaches to K-12 science education through computational modeling.
+                    </p>
+                    <p>
+                        With 15+ years in educational leadership, Dr. Martin has been instrumental in bringing
+                        cutting-edge computational modeling tools into K-12 and higher education classrooms worldwide.
+                        She is a passionate advocate for equity, innovation, and women's leadership in education.
+                    </p>
+                    <p>
+                        Her work focuses on transforming pedagogy through systems thinking, preparing students for
+                        the intelligent age, and building "teacher armies" equipped to lead educational innovation.
+                    </p>
+                    <div class="bio-credentials">
+                        <span class="credential-badge">Ed.L. (Educational Leadership)</span>
+                        <span class="credential-badge">Vice President, Discovery Collective</span>
+                        <span class="credential-badge">ModelIt Leader</span>
+                        <span class="credential-badge">Cell Collective Partner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="subscribe">
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-title">Subscribe for New Videos</h2>
+                <p class="footer-description">
+                    Join thousands of educational leaders receiving insights, strategies, and inspiration every other Tuesday.
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">YouTube</a>
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                    <a href="mailto:info@discoverycollective.com" class="footer-link">Email</a>
+                    <a href="https://modelitk12.com" class="footer-link">ModelIt</a>
+                    <a href="https://cellcollective.org" class="footer-link">Cell Collective</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Marie Martin / Discovery Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
